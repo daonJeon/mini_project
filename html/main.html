@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <style>
+      .header {height:auto;}
+      .header .btn-arrow {display:inline-block; margin:8px 0}
+      .header .menu-list,
+      .header .gnb-list {float:right;}
+      .header .logo {margin-top:10px}
+      .header .menu-list li,
+      .header .gnb-list li {float:left;}
+      .header .menu-list li {padding:8px 10px;font-size:14px; color: #111; }
+      .header .gnb-list li {padding:20px 10px; font-weight:500; font-size:16px; color:#111; }
+
+      .btn-arrow {position:relative; }      
+      .btn-arrow .txt {display:inline-block; vertical-align: middle;}
+      .btn-arrow .right {position:relative; margin-left:6px; width:16px;height:20px;  }
+      .btn-arrow .right:after {position:absolute; width:4px; height:4px; margin-top:-0px; top:50%; right:0; transform:rotate(45deg); border-top:1px solid #111; border-right:1px solid #111; content:'';} 
+      
+      .btn-cam, 
+      .btn-setting {position:relative; display:block; padding-left:20px; }
+      .btn-cam:before, 
+      .btn-setting:before {position:absolute; width:16px; height:16px; left:0;  background:url(../../images/ico_cam.png) no-repeat left center /16px; content:''}
+      .btn-setting:before {background-image:url(../../images/ico_setting.png)}
+
+      .btn-cam:hover:before {transition:transform .4s; transform:scale(1.05)}
+      .btn-setting:hover:before {transition:transform .4s; transform:rotate(90deg)}
+
+      #content { min-height:calc(100vh - 188px); width:100%; overflow: hidden;}
+      .content-wrap {height:100%;}
+      .footer {height:100px; background:#ddd; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+       <header id="header" class="header">
+              <div class="menu">
+               <div class="inbox clear">
+                <h1 class="logo">PROJECT50</h1>
+                <ul class="gnb-list">
+                  <li><a href="#HOME">HOME</a></li>
+                  <li><a href="#PROJECT">PROJECT</a></li>
+                  <li><a href="#ABOUT">ABOUT</a></li>
+                </ul>
+              </div>
+           </div>
+       </header>
+       <div id="content">
+           <div class="content-wrap">
+             <div class="inbox">
+               <h2>50 MINI PROJECT COLLECTION</h2>
+             </div>   
+           </div>
+           <ul class="flex-box">
+             <li>
+               <div class="box"><span class="title"></span><a href="#">LIVE Demo</a></div>
+             </li>
+             <li>
+               <div class="box"><span class="title"></span><a href="#">LIVE Demo</a></div>
+             </li>
+             <li>
+               <div class="box"><span class="title"></span><a href="#">LIVE Demo</a></div>
+             </li>
+             <li>
+               <div class="box"><span class="title"></span><a href="#">LIVE Demo</a></div>
+             </li>
+             <li>
+               <div class="box"><span class="title"></span><a href="#">LIVE Demo</a></div>
+             </li>
+           </ul>
+       </div>
+       <footer id="footer" class="footer">
+           footer
+       </footer>
+    </div>
+
+    <script>
+        const btn = document.querySelector(".btn-menu");
+        btn.addEventListener("click",function(e){
+            e.target.classList.add("open")
+        })
+    </script>
+</body>
+</html>
